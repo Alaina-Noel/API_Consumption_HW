@@ -9,16 +9,13 @@ RSpec.describe UserInfo do
     expect(user_info).to be_instance_of(UserInfo)
   end
 
- xit "can tell the length of a bio" do
-    bio = Bio.new("bio")
+  #this is where I left off
+ xit "can convert the hash keys into symbols o" do
+  user_info = UserInfo.new("Alaina-Noel")
 
-    expect(user_client.get("Alaina-Noel").class).to eq(Hash)
-  end
+  allow(user_info).to receive(:new).and_return({"key1"=> "value1", "key2"=> "value2"})
 
-  xit "can parse data into a hash" do
-    user_client = double("Alaina-Fake")
-    allow(user_client).to receive(:get).and_return({"key1"=> "value1", "key2"=> "value2"})
-    #am i doing this right?
+    expect(user_info.user_data).to eq({:key1=> "value1", :key2 => "value2"})
   end
 
 end
