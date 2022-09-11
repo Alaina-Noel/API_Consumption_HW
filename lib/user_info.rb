@@ -1,7 +1,7 @@
 require 'httparty'
 require 'pry'
 require 'json'
-require './github_user_client'
+require './lib/github_user_client'
 
 class UserInfo
   attr_reader :user_data

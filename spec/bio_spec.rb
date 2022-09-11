@@ -1,15 +1,15 @@
-require './lib/github_user_client'
+require './lib/bio'
 
-RSpec.describe GithubUsersClient do
+RSpec.describe Bio do
 
   it "exists" do
-    user_client = GithubUsersClient.new
+    bio = Bio.new("bio")
 
-    expect(user_client).to be_instance_of(GithubUsersClient)
+    expect(bio).to be_instance_of(Bio)
   end
 
-  it "can parse data into a hash" do
-    user_client = GithubUsersClient.new
+  it "can tell the length of a bio" do
+    bio = Bio.new("bio")
 
     expect(user_client.get("Alaina-Noel").class).to eq(Hash)
   end
